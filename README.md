@@ -27,7 +27,7 @@ Users can add participants and record expenses by specifying the amount and paye
 
 ## 🌐 Live Demo
 
-[[Add your deployed link here]](https://advik-bhat.github.io/smart-expense-splitter/)
+[[View Live Demo]](https://advik-bhat.github.io/smart-expense-splitter/)
 
 ## 📸 Screenshots
 
