@@ -2,7 +2,7 @@
 
 A responsive web application that helps groups manage shared expenses, calculate individual balances, and determine who owes whom.
 
-## Features
+## 🚀 Features
 
 - Add and manage participants
 - Record group expenses
@@ -14,7 +14,7 @@ A responsive web application that helps groups manage shared expenses, calculate
 - Export balances as CSV
 - Persistent data using LocalStorage
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - HTML5
 - CSS3
@@ -25,62 +25,15 @@ A responsive web application that helps groups manage shared expenses, calculate
 
 Users can add participants and record expenses by specifying the amount and payer. The application dynamically calculates each participant's contribution and balance, then generates a simplified settlement plan showing who should pay whom.
 
-## Live Demo
+## 🌐 Live Demo
 
-[Add your deployed link here]
+[[Add your deployed link here]](https://advik-bhat.github.io/smart-expense-splitter/)
 
-## Screenshots
+## 📸 Screenshots
 
 
 <p align="center">
   <img src="Screenshot 2026-09-29 154950.png" width="48%" alt="Dashboard">
   <img src="Screenshot 2026-09-29 154950.png" width="48%" alt="Balances and Settlements">
 </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
