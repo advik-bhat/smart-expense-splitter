@@ -1,0 +1,974 @@
+:root {
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --text: #172033;
+    --muted: #737b8c;
+
+    --primary: #635bff;
+    --primary-dark: #5148e5;
+
+    --green: #16875d;
+    --green-bg: #eaf8f2;
+
+    --red: #d64545;
+    --red-bg: #fff0f0;
+
+    --border: #e6e9f0;
+
+    --radius: 18px;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--bg);
+    color: var(--text);
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   APP
+========================= */
+
+.app {
+    width: min(1180px, 94%);
+    margin: 0 auto;
+    padding: 42px 0 30px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 30px;
+}
+
+
+.eyebrow {
+    display: block;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: var(--primary);
+
+    margin-bottom: 7px;
+}
+
+
+.hero h1 {
+    font-size: 42px;
+    line-height: 1;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 10px;
+}
+
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+
+.hero p {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+
+    border: none;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+
+button:active {
+    transform: translateY(0);
+}
+
+
+.primary-btn {
+    background: var(--primary);
+    color: white;
+
+    padding: 13px 20px;
+
+    border-radius: 12px;
+
+    font-weight: 700;
+
+    min-width: 150px;
+}
+
+
+.primary-btn:hover {
+    background: var(--primary-dark);
+    box-shadow: 0 8px 20px rgba(99, 91, 255, 0.2);
+}
+
+
+.outline-btn {
+    background: white;
+
+    color: var(--primary);
+
+    border: 1px solid var(--border);
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+}
+
+
+.secondary-btn {
+    width: 100%;
+
+    background: #f0efff;
+
+    color: var(--primary);
+
+    padding: 12px;
+
+    border-radius: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 24px;
+}
+
+
+.stat-card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    box-shadow:
+        0 5px 20px rgba(20, 30, 50, 0.04);
+}
+
+
+.stat-icon {
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    background: #f0efff;
+
+    color: var(--primary);
+
+    font-weight: 800;
+}
+
+
+.stat-label {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-bottom: 4px;
+}
+
+
+.stat-card strong {
+    font-size: 21px;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.55fr)
+        minmax(320px, 0.85fr);
+
+    gap: 22px;
+
+    align-items: start;
+}
+
+
+.main-column,
+.side-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 24px;
+
+    box-shadow:
+        0 5px 20px rgba(20, 30, 50, 0.04);
+}
+
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+
+.section-header h2 {
+    font-size: 18px;
+
+    margin-bottom: 5px;
+}
+
+
+.section-header p {
+    font-size: 13px;
+
+    color: var(--muted);
+}
+
+
+/* =========================
+   FORMS
+========================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 16px;
+}
+
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+
+label {
+    font-size: 13px;
+
+    color: #596174;
+
+    font-weight: 600;
+}
+
+
+input,
+select {
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    background: #fbfcfe;
+
+    color: var(--text);
+
+    padding: 12px 13px;
+
+    border-radius: 11px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+input:focus,
+select:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(99, 91, 255, 0.1);
+
+    background: white;
+}
+
+
+.amount-input {
+    position: relative;
+}
+
+
+.amount-input span {
+    position: absolute;
+
+    left: 13px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--muted);
+
+    font-weight: 600;
+}
+
+
+.amount-input input {
+    padding-left: 32px;
+}
+
+
+/* =========================
+   PARTICIPANTS
+========================= */
+
+.add-participant {
+    display: grid;
+
+    grid-template-columns:
+        1fr auto;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+
+.add-participant button {
+    background: #f0efff;
+
+    color: var(--primary);
+
+    padding: 0 18px;
+
+    border-radius: 11px;
+
+    font-weight: 700;
+}
+
+
+.participants-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+
+.chip {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background: #f5f6fa;
+
+    border: 1px solid var(--border);
+
+    padding: 8px 9px 8px 12px;
+
+    border-radius: 100px;
+
+    font-size: 13px;
+}
+
+
+.chip button {
+    width: 22px;
+    height: 22px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #e9ebf1;
+
+    color: #687080;
+
+    font-size: 15px;
+}
+
+
+.chip button:hover {
+    background: var(--red-bg);
+
+    color: var(--red);
+}
+
+
+/* =========================
+   EXPENSE PARTICIPANTS
+========================= */
+
+.participant-selector {
+    margin-top: 20px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.checkbox-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 9px;
+}
+
+
+.person-checkbox {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    background: #f8f9fc;
+
+    border: 1px solid var(--border);
+
+    padding: 11px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.15s ease;
+}
+
+
+.person-checkbox:hover {
+    border-color: var(--primary);
+
+    background: #faf9ff;
+}
+
+
+.person-checkbox input {
+    width: auto;
+}
+
+
+.person-checkbox span {
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   SPLIT
+========================= */
+
+.split-row {
+    display: flex;
+
+    align-items: end;
+
+    gap: 14px;
+
+    margin-top: 20px;
+}
+
+
+.split-row .form-group {
+    flex: 1;
+}
+
+
+.split-row .primary-btn {
+    height: 43px;
+}
+
+
+.custom-shares {
+    margin-top: 16px;
+}
+
+
+.custom-share-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr 120px;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   EXPENSE HISTORY
+========================= */
+
+.expense-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 15px;
+
+    border: 1px solid var(--border);
+
+    background: #fafbfc;
+
+    border-radius: 13px;
+
+    margin-bottom: 10px;
+}
+
+
+.expense-title {
+    font-weight: 700;
+
+    font-size: 14px;
+
+    margin-bottom: 4px;
+}
+
+
+.expense-meta {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+.expense-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.expense-amount {
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+.delete-btn {
+    background: var(--red-bg);
+
+    color: var(--red);
+
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   BALANCES
+========================= */
+
+.balance {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 28px;
+
+    padding: 15px 14px;
+
+    border: 1px solid var(--border);
+
+    background: #fafbfc;
+
+    border-radius: 12px;
+
+    margin-bottom: 9px;
+}
+
+
+.balance-person {
+    min-width: 0;
+
+    flex: 1;
+
+    font-weight: 700;
+
+    overflow-wrap: anywhere;
+}
+
+
+.balance-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    white-space: nowrap;
+
+    text-align: right;
+}
+
+
+.balance-detail {
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+.balance-status {
+    min-width: 95px;
+
+    text-align: right;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+
+.pos {
+    color: var(--green);
+}
+
+
+.neg {
+    color: var(--red);
+}
+
+
+.settled {
+    color: var(--muted);
+}
+
+
+/* =========================
+   SETTLEMENT
+========================= */
+
+.settlement-item {
+    padding: 13px;
+
+    background: #f8f8ff;
+
+    border: 1px solid #e7e5ff;
+
+    border-radius: 11px;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   EXPORT
+========================= */
+
+.export-card {
+    background:
+        linear-gradient(
+            135deg,
+            #f7f6ff,
+            #ffffff
+        );
+}
+
+
+.export-card h3 {
+    font-size: 15px;
+
+    margin-bottom: 7px;
+}
+
+
+.export-card p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+    text-align: center;
+
+    color: var(--muted);
+
+    background: #fafbfc;
+
+    border: 1px dashed var(--border);
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    padding: 30px 0 5px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .side-column {
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .export-card {
+        grid-column: 1 / -1;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .app {
+        width: 92%;
+
+        padding-top: 25px;
+    }
+
+
+    .hero {
+        align-items: center;
+    }
+
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+
+    .hero p {
+        font-size: 14px;
+    }
+
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .form-group.full {
+        grid-column: auto;
+    }
+
+
+    .add-participant {
+        grid-template-columns: 1fr;
+    }
+
+
+    .add-participant button {
+        padding: 12px;
+    }
+
+
+    .split-row {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .split-row .primary-btn {
+        width: 100%;
+    }
+
+
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .side-column {
+        display: flex;
+    }
+
+
+    .balance {
+        gap: 12px;
+    }
+
+
+    .balance-info {
+        gap: 8px;
+    }
+
+
+    .balance-detail {
+        display: none;
+    }
+
+
+    .balance-status {
+        min-width: auto;
+    }
+
+
+    .expense-item {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .expense-right {
+        width: 100%;
+
+        justify-content: space-between;
+    }
+}

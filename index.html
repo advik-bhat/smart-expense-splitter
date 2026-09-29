@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SmartSplit — Expense Splitter</title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<main class="app">
+
+    <!-- HEADER -->
+    <header class="hero">
+        <div>
+            <span class="eyebrow">GROUP EXPENSES</span>
+            <h1>Smart<span>Split</span></h1>
+            <p>Split expenses with friends without the headache.</p>
+        </div>
+
+        <button id="resetBtn" class="outline-btn">
+            Reset
+        </button>
+    </header>
+
+
+    <!-- TOP STATS -->
+    <section class="stats-grid">
+
+        <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <div>
+                <span class="stat-label">People</span>
+                <strong id="totalPeople">0</strong>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">₹</div>
+            <div>
+                <span class="stat-label">Total spent</span>
+                <strong id="totalSpent">₹0.00</strong>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">🧾</div>
+            <div>
+                <span class="stat-label">Expenses</span>
+                <strong id="totalExpenses">0</strong>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- MAIN DASHBOARD -->
+    <div class="dashboard">
+
+        <!-- LEFT -->
+        <section class="main-column">
+
+            <!-- PARTICIPANTS -->
+            <div class="card">
+
+                <div class="section-header">
+                    <div>
+                        <h2>Participants</h2>
+                        <p>Add everyone involved in the group.</p>
+                    </div>
+                </div>
+
+                <div class="add-participant">
+                    <input
+                        id="participantName"
+                        type="text"
+                        placeholder="Enter a name..."
+                    />
+
+                    <button id="addParticipantBtn">
+                        + Add person
+                    </button>
+                </div>
+
+                <div
+                    id="participantsWrap"
+                    class="participants-list"
+                >
+                    <div class="empty-state">
+                        No participants yet.
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ADD EXPENSE -->
+            <div class="card">
+
+                <div class="section-header">
+                    <div>
+                        <h2>Add expense</h2>
+                        <p>Record who paid and who participated.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+
+                    <div class="form-group full">
+                        <label for="expenseDesc">
+                            Description
+                        </label>
+
+                        <input
+                            id="expenseDesc"
+                            type="text"
+                            placeholder="e.g. Dinner, Hotel, Cab"
+                        />
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="expenseAmount">
+                            Amount
+                        </label>
+
+                        <div class="amount-input">
+                            <span>₹</span>
+
+                            <input
+                                id="expenseAmount"
+                                type="number"
+                                min="0"
+                                step="0.01"
+                                placeholder="0.00"
+                            />
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="expensePayer">
+                            Paid by
+                        </label>
+
+                        <select id="expensePayer">
+                            <option value="">
+                                Select payer
+                            </option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PARTICIPANTS IN THIS EXPENSE -->
+                <div class="form-group participant-selector">
+
+                    <label>
+                        Who participated?
+                    </label>
+
+                    <div
+                        id="expenseParticipants"
+                        class="checkbox-grid"
+                    >
+                        <div class="empty-state">
+                            Add participants first.
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- SPLIT MODE -->
+                <div class="split-row">
+
+                    <div class="form-group">
+
+                        <label for="splitMode">
+                            Split method
+                        </label>
+
+                        <select id="splitMode">
+                            <option value="equal">
+                                Split equally
+                            </option>
+
+                            <option value="custom">
+                                Custom shares
+                            </option>
+                        </select>
+
+                    </div>
+
+                    <button
+                        id="addExpenseBtn"
+                        class="primary-btn"
+                    >
+                        Add expense
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="customSharesArea"
+                    class="custom-shares"
+                ></div>
+
+            </div>
+
+
+            <!-- EXPENSE HISTORY -->
+            <div class="card">
+
+                <div class="section-header">
+                    <div>
+                        <h2>Expense history</h2>
+                        <p>All recorded expenses appear here.</p>
+                    </div>
+                </div>
+
+                <div id="expensesList">
+                    <div class="empty-state">
+                        No expenses yet.
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="side-column">
+
+            <!-- BALANCES -->
+            <div class="card">
+
+                <div class="section-header">
+                    <div>
+                        <h2>Balances</h2>
+                        <p>Who owes and who gets back.</p>
+                    </div>
+                </div>
+
+                <div id="balancesWrap">
+                    <div class="empty-state">
+                        Add an expense to see balances.
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- SETTLEMENT -->
+            <div class="card settlement-card">
+
+                <div class="section-header">
+                    <div>
+                        <h2>Quick settlement</h2>
+                        <p>Suggested payments to settle up.</p>
+                    </div>
+                </div>
+
+                <div id="settlePlan">
+                    <div class="empty-state">
+                        Your settlement plan will appear here.
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- EXPORT -->
+            <div class="card export-card">
+
+                <h3>Take your data with you</h3>
+
+                <p>
+                    Export your current balances as a CSV file.
+                </p>
+
+                <button id="exportBtn" class="secondary-btn">
+                    ↓ Export CSV
+                </button>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <footer>
+        Built with HTML, CSS & JavaScript
+    </footer>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
