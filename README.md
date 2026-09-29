@@ -31,16 +31,10 @@ Users can add participants and record expenses by specifying the amount and paye
 
 ## Screenshots
 
-<p align="center">
-  <img src="[screenshots/home.png](https://github.com/advik-bhat/smart-expense-splitter/blob/de84224b2a4ad1d852d346104acfed96400edf73/Screenshot%202026-09-29%20154950.png)" width="800">
-</p>
 
-<p align="center">
-  <img src="[screenshots/dashboard.png](https://github.com/advik-bhat/smart-expense-splitter/blob/de84224b2a4ad1d852d346104acfed96400edf73/Screenshot%202026-09-29%20154950.png)" width="800">
-</p>
+https://github.com/advik-bhat/smart-expense-splitter/blob/de84224b2a4ad1d852d346104acfed96400edf73/Screenshot%202026-09-29%20154950.png
 
-
-
+https://github.com/advik-bhat/smart-expense-splitter/blob/de84224b2a4ad1d852d346104acfed96400edf73/Screenshot%202026-09-29%20155120.png
 
 
 
