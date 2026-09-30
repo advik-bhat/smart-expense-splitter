@@ -19,7 +19,7 @@ A responsive web application that helps groups manage shared expenses, calculate
 - HTML5
 - CSS3
 - JavaScript
-- LocalStorage API
+
 
 ## How It Works
 
